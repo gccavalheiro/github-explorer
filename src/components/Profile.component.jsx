@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const Profile = () => {
-  const [perfil, setPerfil] = useState({});
+  const [perfil, setPerfil] = useState(null);
   const [repositories, setRepositories] = useState([]);
 
   React.useEffect(() => {

@@ -1,7 +1,7 @@
+import React from 'react';
 import { RepositoryItem } from './RepositoryItem.component';
 
 import '../styles/repositories.scss';
-import React from 'react';
 
 // https://api.github.com/users/gccavalheiro
 
@@ -11,8 +11,14 @@ import React from 'react';
 //   link: 'https://github.com/unform/unform',
 // };
 
+interface IRepository {
+  name: string;
+  description: string;
+  html_url: string;
+}
+
 export const RepositoryList = () => {
-  const [repositories, setRepositories] = React.useState([]);
+  const [repositories, setRepositories] = React.useState<IRepository[]>([]);
 
   React.useEffect(() => {
     fetch('https://api.github.com/users/gccavalheiro/repos')
